@@ -1,0 +1,28 @@
+synonym:
+  matchType: FUZZY_MATCH
+  entities:
+    living room:
+      synonyms:
+        - living room
+        - lounge
+        - front room
+        - main room
+        - downstairs
+    bedroom:
+      synonyms:
+        - bedroom
+        - master bedroom
+        - upstairs
+    kitchen:
+      synonyms:
+        - kitchen
+        - diner
+    office:
+      synonyms:
+        - office
+        - study
+        - work room
+    dining room:
+      synonyms:
+        - dining room
+        - dining

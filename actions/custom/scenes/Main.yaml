@@ -1,0 +1,20 @@
+intentEvents:
+  - intent: SkyControl
+    transitionTo: SkyControl
+  - intent: SkyPower
+    transitionTo: SkyControl
+  - intent: ListDevices
+    transitionTo: ListDevices
+  - intent: actions.intent.NO_MATCH_1
+    transitionTo: NoMatch
+  - intent: actions.intent.NO_INPUT_1
+    transitionTo: NoInput
+
+onEnter:
+  webhookHandler: Main
+  staticPrompt:
+    candidates:
+      - promptResponse:
+          firstSimple:
+            variants:
+              - speech: Sky Control ready. What would you like to do?

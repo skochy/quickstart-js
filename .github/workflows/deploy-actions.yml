@@ -1,0 +1,42 @@
+name: Deploy Google Actions
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "actions/**"
+  workflow_dispatch:
+    inputs:
+      project_id:
+        description: Google Actions Project ID
+        required: true
+
+jobs:
+  deploy-actions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install gactions CLI
+        run: |
+          curl -Lo gactions \
+            "https://dl.google.com/gactions/v3/release/gactions_linux_amd64"
+          chmod +x gactions
+          sudo mv gactions /usr/local/bin/
+
+      - name: Write Google credentials
+        run: echo '${{ secrets.GOOGLE_ACTIONS_CREDENTIALS }}' > /tmp/credentials.json
+
+      - name: Inject webhook URL
+        run: |
+          sed -i 's|\${{env.WEBHOOK_URL}}|${{ secrets.WEBHOOK_URL }}|g' \
+            actions/webhooks/ActionsOnGoogleFulfillment.yaml
+
+      - name: Deploy to Google Actions
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: /tmp/credentials.json
+        run: |
+          PROJECT_ID="${{ github.event.inputs.project_id || secrets.GOOGLE_ACTIONS_PROJECT_ID }}"
+          gactions push --project-id "$PROJECT_ID" --action-package actions/

@@ -1,0 +1,10 @@
+onEnter:
+  staticPrompt:
+    candidates:
+      - promptResponse:
+          firstSimple:
+            variants:
+              - speech: >
+                  I didn't hear anything. Try saying pause, play, or channel up.
+  next:
+    name: actions.scene.END_CONVERSATION

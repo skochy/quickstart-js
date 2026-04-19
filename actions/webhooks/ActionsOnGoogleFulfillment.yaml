@@ -1,0 +1,4 @@
+# Inline webhook — the fulfillment URL is set at deploy time via the WEBHOOK_URL secret.
+# Replace <YOUR_WEBHOOK_URL> with your public URL (e.g. from Cloudflare Tunnel or ngrok).
+httpsEndpoint:
+  baseUrl: ${{env.WEBHOOK_URL}}/webhook

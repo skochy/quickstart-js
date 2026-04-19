@@ -1,0 +1,32 @@
+services:
+  skyq-voice:
+    image: ghcr.io/${GITHUB_REPOSITORY:-skochy/quickstart-js}:latest
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    environment:
+      # Comma-separated list of name:ip pairs
+      # Example: SKY_DEVICES=living_room:192.168.1.100,bedroom:192.168.1.101
+      SKY_DEVICES: ${SKY_DEVICES:?SKY_DEVICES env var required}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  # Cloudflare Tunnel — exposes port 8000 to the internet so Google Actions
+  # can reach your local server. Requires a free Cloudflare account and tunnel token.
+  # Remove this service if you prefer ngrok or have a public IP.
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    command: tunnel --no-autoupdate run
+    environment:
+      TUNNEL_TOKEN: ${CLOUDFLARE_TUNNEL_TOKEN:-}
+    restart: unless-stopped
+    depends_on:
+      - skyq-voice
+    profiles:
+      - tunnel

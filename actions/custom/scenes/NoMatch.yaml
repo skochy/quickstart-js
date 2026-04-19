@@ -1,0 +1,11 @@
+onEnter:
+  staticPrompt:
+    candidates:
+      - promptResponse:
+          firstSimple:
+            variants:
+              - speech: >
+                  Sorry, I didn't understand that. Try saying pause, play,
+                  channel up or channel down.
+  next:
+    name: actions.scene.END_CONVERSATION

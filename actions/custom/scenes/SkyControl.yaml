@@ -1,0 +1,8 @@
+intentEvents:
+  - intent: actions.intent.NO_MATCH_1
+    transitionTo: NoMatch
+  - intent: actions.intent.NO_INPUT_1
+    transitionTo: NoInput
+
+onEnter:
+  webhookHandler: SkyControl

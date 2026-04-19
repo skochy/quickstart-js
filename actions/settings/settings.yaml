@@ -1,0 +1,18 @@
+localizedSettings:
+  displayName: Sky Control
+  pronunciation: Sky Control
+  description: Control your Sky Q boxes with your voice.
+  shortDescription: Voice control for Sky Q boxes.
+  smallLogoImage: $resources.images.skycontrol_logo
+  developerName: Home Automation
+  privacyPolicyUrl: https://example.com/privacy
+
+defaultLocale: en-GB
+enabledRegions:
+  - en-GB
+  - en-US
+  - en-AU
+  - en-CA
+
+category: HOME_AUTOMATION
+isForFamilies: false

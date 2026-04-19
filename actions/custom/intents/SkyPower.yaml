@@ -1,0 +1,18 @@
+parameters:
+  - name: SkyDevice
+    type:
+      name: SkyDevice
+trainingPhrases:
+  - turn on sky
+  - turn off sky
+  - switch on the sky
+  - switch off the sky
+  - sky standby
+  - put sky on standby
+  - wake up sky
+  - turn on the sky box
+  - turn off the sky box
+  - turn on the ($SkyDevice living room) sky
+  - turn off the ($SkyDevice bedroom) sky
+  - switch on ($SkyDevice kitchen) sky
+  - put the ($SkyDevice living room) sky on standby

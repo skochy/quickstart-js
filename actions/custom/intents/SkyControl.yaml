@@ -1,0 +1,48 @@
+parameters:
+  - name: SkyCommand
+    type:
+      name: SkyCommand
+  - name: SkyDevice
+    type:
+      name: SkyDevice
+trainingPhrases:
+  - ($SkyCommand pause)
+  - ($SkyCommand play)
+  - ($SkyCommand stop)
+  - ($SkyCommand record)
+  - ($SkyCommand fast forward)
+  - ($SkyCommand rewind)
+  - ($SkyCommand channel up)
+  - ($SkyCommand channel down)
+  - ($SkyCommand guide)
+  - ($SkyCommand home)
+  - ($SkyCommand back)
+  - ($SkyCommand turn on)
+  - ($SkyCommand turn off)
+  - ($SkyCommand red)
+  - ($SkyCommand green)
+  - ($SkyCommand yellow)
+  - ($SkyCommand blue)
+  - ($SkyCommand pause) in the ($SkyDevice living room)
+  - ($SkyCommand play) in the ($SkyDevice bedroom)
+  - ($SkyCommand stop) in the ($SkyDevice kitchen)
+  - ($SkyCommand channel up) on the ($SkyDevice living room) sky
+  - ($SkyCommand channel down) on ($SkyDevice bedroom) sky
+  - ($SkyCommand fast forward) in the ($SkyDevice office)
+  - ($SkyCommand rewind) in the ($SkyDevice living room)
+  - ($SkyCommand turn on) the ($SkyDevice bedroom) sky
+  - ($SkyCommand turn off) the ($SkyDevice living room) sky
+  - ($SkyCommand guide) on the ($SkyDevice bedroom) box
+  - ($SkyCommand home) on the ($SkyDevice living room) box
+  - pause the sky box
+  - play the sky box
+  - stop the sky box
+  - channel up
+  - channel down
+  - open the guide
+  - go to sky home
+  - rewind the sky
+  - fast forward the sky
+  - pause the sky in the living room
+  - turn on the living room sky
+  - turn off the bedroom sky

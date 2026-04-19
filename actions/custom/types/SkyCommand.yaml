@@ -1,0 +1,100 @@
+synonym:
+  matchType: EXACT_MATCH
+  entities:
+    play:
+      synonyms:
+        - play
+        - resume
+        - unpause
+        - start playing
+    pause:
+      synonyms:
+        - pause
+        - freeze
+        - hold
+    stop:
+      synonyms:
+        - stop
+        - halt
+    record:
+      synonyms:
+        - record
+        - start recording
+    fast forward:
+      synonyms:
+        - fast forward
+        - skip forward
+        - speed up
+        - ff
+    rewind:
+      synonyms:
+        - rewind
+        - skip back
+        - go back in the recording
+    channel up:
+      synonyms:
+        - channel up
+        - next channel
+        - channel plus
+    channel down:
+      synonyms:
+        - channel down
+        - previous channel
+        - channel minus
+        - last channel
+    guide:
+      synonyms:
+        - guide
+        - tv guide
+        - open the guide
+        - show the guide
+    home:
+      synonyms:
+        - home
+        - sky home
+        - go home
+        - main menu
+    back:
+      synonyms:
+        - back
+        - go back
+    power:
+      synonyms:
+        - power
+        - toggle power
+    turn on:
+      synonyms:
+        - turn on
+        - switch on
+        - wake up
+        - power on
+    turn off:
+      synonyms:
+        - turn off
+        - switch off
+        - standby
+        - power off
+    red:
+      synonyms:
+        - red
+        - red button
+    green:
+      synonyms:
+        - green
+        - green button
+    yellow:
+      synonyms:
+        - yellow
+        - yellow button
+    blue:
+      synonyms:
+        - blue
+        - blue button
+    interactive:
+      synonyms:
+        - interactive
+        - interactive services
+    search:
+      synonyms:
+        - search
+        - find
