@@ -1,6 +1,6 @@
 """Thin wrapper around pyskyq for sending remote-control commands to Sky Q boxes."""
 import logging
-from pyskyq import SkyRemote, REMOTECOMMANDS
+from pyskyq import press_remote, REMOTECOMMANDS
 
 logger = logging.getLogger(__name__)
 
@@ -94,8 +94,7 @@ class SkyController:
             logger.warning("Unknown command: %r", command)
             return False
         try:
-            remote = SkyRemote(self.ip, self.port)
-            remote.press(cmd)
+            press_remote(self.ip, cmd, self.port)
             logger.info("Sent %r to %s", command, self.ip)
             return True
         except Exception:

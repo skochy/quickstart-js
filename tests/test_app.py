@@ -1,6 +1,6 @@
 import os
 import pytest
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 from fastapi.testclient import TestClient
 
 
@@ -43,9 +43,8 @@ def _webhook_payload(handler: str, command: str, device: str | None = None) -> d
     }
 
 
-@patch("src.sky_controller.SkyRemote")
-def test_webhook_pause(MockRemote, client):
-    MockRemote.return_value = MagicMock()
+@patch("src.sky_controller.press_remote")
+def test_webhook_pause(mock_press, client):
     payload = _webhook_payload("SkyControl", "pause")
     resp = client.post("/webhook", json=payload)
     assert resp.status_code == 200
@@ -53,9 +52,8 @@ def test_webhook_pause(MockRemote, client):
     assert "Pausing" in body["prompt"]["firstSimple"]["speech"]
 
 
-@patch("src.sky_controller.SkyRemote")
-def test_webhook_channel_up(MockRemote, client):
-    MockRemote.return_value = MagicMock()
+@patch("src.sky_controller.press_remote")
+def test_webhook_channel_up(mock_press, client):
     payload = _webhook_payload("SkyControl", "channel up")
     resp = client.post("/webhook", json=payload)
     assert resp.status_code == 200
